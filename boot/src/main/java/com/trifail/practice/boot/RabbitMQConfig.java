@@ -5,8 +5,8 @@
 //import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 //import org.springframework.amqp.rabbit.core.RabbitAdmin;
 //import org.springframework.amqp.rabbit.core.RabbitTemplate;
-//import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
-//import org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter;
+//import org.springframework.amqp.rabbit.com.trifail.practice.api.advance.reachable.SimpleMessageListenerContainer;
+//import org.springframework.amqp.rabbit.com.trifail.practice.api.advance.reachable.adapter.MessageListenerAdapter;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.ComponentScan;
 //import org.springframework.context.annotation.Configuration;
