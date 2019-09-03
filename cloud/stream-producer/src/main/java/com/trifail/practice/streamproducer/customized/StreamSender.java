@@ -16,11 +16,12 @@ import org.springframework.messaging.support.GenericMessage;
 public class StreamSender {
 
     private static Logger logger = LoggerFactory.getLogger(StreamSender.class);
-    private int count = 0;
+    private Integer count = 0;
 
     @Bean
     @InboundChannelAdapter(value = Sender.OUTPUT, poller = @Poller(fixedDelay = "2000"))
     public MessageSource<String> timerMessageSource() {
-        return () -> new GenericMessage<>("{\"number\":\"" + count + "\", " + "\"name\":\"syoka\", \"age\":25}");
+        return () -> new GenericMessage(count++);
+//        return () -> new GenericMessage<>("{\"number\":\"" + count + "\", " + "\"name\":\"syoka\", \"age\":25}");
     }
 }
