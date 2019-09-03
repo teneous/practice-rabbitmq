@@ -1,12 +1,13 @@
-package com.trifail.practice.streamproducer;
+package com.trifail.cloud.streamproducer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class StreamProducerApplication {
+public class StreamConsumerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(StreamProducerApplication.class, args);
+        SpringApplication.run(StreamConsumerApplication.class, args);
     }
+
 }

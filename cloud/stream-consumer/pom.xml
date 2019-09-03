@@ -9,13 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <artifactId>stream-producer</artifactId>
+    <groupId>com.trifail.cloud</groupId>
+    <artifactId>stream-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>stream-producer</name>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
 
     <dependencies>
         <dependency>
