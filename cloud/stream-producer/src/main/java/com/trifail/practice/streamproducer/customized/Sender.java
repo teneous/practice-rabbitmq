@@ -8,7 +8,7 @@ import org.springframework.messaging.SubscribableChannel;
  */
 public interface Sender {
 
-    String OUTPUT = "exe.rabbitmq.stream";
+    String OUTPUT = "exe_rabbitmq_stream";
 
     @Output(Sender.OUTPUT)
     SubscribableChannel output();

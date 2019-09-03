@@ -13,6 +13,6 @@ public class StreamReceiver {
 
     @StreamListener(Receiver.INPUT)
     public void receive(Object payload) {
-        System.err.println("接受消息" + payload + ",接受时间" + new Date());
+        System.err.println("接受消息:" + payload + ",接受时间" + new Date());
     }
 }
