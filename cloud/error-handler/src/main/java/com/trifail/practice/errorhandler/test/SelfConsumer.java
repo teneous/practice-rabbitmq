@@ -1,6 +1,7 @@
 package com.trifail.practice.errorhandler.test;
 
 import com.trifail.practice.errorhandler.test.common.SelfGame;
+import org.springframework.amqp.AmqpRejectAndDontRequeueException;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.integration.annotation.ServiceActivator;
@@ -20,7 +21,7 @@ public class SelfConsumer {
     @StreamListener(SelfGame.INPUT)
     public void receive(Message message) {
         System.err.println("接受消息！！！");
-        System.out.println(message);
+        System.err.println(message);
         count++;
         if (count == 2) {
             throw new RuntimeException();
@@ -33,18 +34,17 @@ public class SelfConsumer {
      * 参考文档7.4章
      */
 
-    /*服务降级exchange.queue.queue*/
-    @ServiceActivator(inputChannel = "games.stream-exception-handler.errors")
-    public void errorHandler(Message<?> message) {
-        System.err.println("消息降级处理" + message.toString());
-    }
-
-
-    /*全局异常处理*/
-    @StreamListener("errorChannel")
-    public void error(Message<?> message) {
-        ErrorMessage errorMessage = (ErrorMessage) message;
-        System.out.println("Handling ERROR: " + errorMessage);
-    }
-
+    /*服务降级exchange.queue.errors*/
+//    @ServiceActivator(inputChannel = "games.stream-exception-handler.errors")
+//    public void errorHandler(Message<?> message) {
+//        System.err.println("消息降级处理:" + message.toString());
+//    }
+//
+//
+//    /*全局异常处理,测试此方法请注释上面的errorHandler*/
+//    @StreamListener("errorChannel")
+//    public void error(Message<?> message) {
+//        ErrorMessage errorMessage = (ErrorMessage) message;
+//        System.err.println("GlobalHandler: " + errorMessage);
+//    }
 }
